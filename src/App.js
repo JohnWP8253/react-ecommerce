@@ -5,7 +5,6 @@ function App() {
   return (
     // BEM
     <div className="App">
-      <h1>Building Amazon store</h1>
       {/* Header */}
       <Header/>
       {/* Home */}
