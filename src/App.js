@@ -13,6 +13,7 @@ function App() {
       <div className="App">
         {/* Header is always displayed*/}
         <Header />
+        {/* Use switch to toggle between pages */}
         <Switch>
           {/* Checkout route */}
           <Route path="/checkout">
