@@ -3,8 +3,20 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const signIn = (e) => {
+    // stops page from refeshing
+    e.preventDefault();
+
+    // firebase logic will be coded here.
+  };
+
+  const register = (e) => {
+    e.preventDefault();
+    // firebase logic will be coded here.
+  };
 
   return (
     <div className="login">
@@ -21,17 +33,33 @@ function Login() {
 
         <form>
           <h5>E-mail</h5>
-          <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
           <h5>Password</h5>
-          <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-          <button className="login__signInBtn">Sign in</button>
+          <button onClick={signIn} type="submit" className="login__signInBtn">
+            Sign in
+          </button>
         </form>
 
-        <p>By signing in, you agree to Amazon FAKE CLONE Conditions of use & Sale. Please see our Privacy Notice, out Cookies Notice and out Interest-Based Ads Notice.</p>
+        <p>
+          By signing in, you agree to Amazon FAKE CLONE Conditions of use &
+          Sale. Please see our Privacy Notice, out Cookies Notice and out
+          Interest-Based Ads Notice.
+        </p>
 
-        <button className="login__registerBtn">Create your Amazon Account</button>
+        <button onClick={register} type="submit" className="login__registerBtn">
+          Create your Amazon Account
+        </button>
       </div>
     </div>
   );
