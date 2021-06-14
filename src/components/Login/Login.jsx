@@ -3,6 +3,9 @@ import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 
 function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <div className="login">
       {/* Amazon link */}
@@ -18,10 +21,10 @@ function Login() {
 
         <form>
           <h5>E-mail</h5>
-          <input type="text" />
+          <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
 
           <h5>Password</h5>
-          <input type="password" />
+          <input type="password" value={password} onChange={e => setPassword(e.target.value)}/>
 
           <button className="login__signInBtn">Sign in</button>
         </form>
